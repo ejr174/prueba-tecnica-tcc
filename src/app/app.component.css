@@ -1,0 +1,8 @@
+li > a {
+    font-size: 16px;
+    font-weight: bold;    
+}
+
+li > a:hover {
+    color: white;
+}
