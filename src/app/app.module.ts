@@ -3,11 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
 import { CommonModule } from '@angular/common'
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,16 +14,19 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ListaClientesComponent } from 'src/components/cliente/lista-clientes/lista-clientes.component';
+import { CrearClienteComponent } from 'src/components/cliente/crear-cliente/crear-cliente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaClientesComponent
+    CrearClienteComponent,
+    ListaClientesComponent,    
   ],
   imports: [
     BrowserModule,
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

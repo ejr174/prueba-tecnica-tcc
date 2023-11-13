@@ -6,5 +6,13 @@ export interface Cliente {
     GeneroID: number;
     CorreoElectronico: string;
     Telefono: string;
-    FechaRegistro: string; // Puedes cambiar el tipo según tus necesidades
+}
+
+export interface ClienteCrear {
+    TipoIdentificacionID: number;
+    NumeroIdentificacion: string;
+    Nombre: string;
+    GeneroID: number;
+    CorreoElectronico: string;
+    Telefono: string;
 }

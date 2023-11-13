@@ -26,8 +26,8 @@ export class ClienteService {
     return this.httpClient.get<Cliente>(this.productoURL + `detailname/${nombre}`);
   }
 
-  public save(producto: Cliente): Observable<any> {
-    return this.httpClient.post<any>(this.productoURL + 'create', producto);
+  public save(cliente: Cliente): Observable<any> {
+    return this.httpClient.post<any>('http://localhost:3000/Clientes', cliente);
   }
 
   public update(id: number, producto: Cliente): Observable<any> {
