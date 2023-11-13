@@ -6,6 +6,7 @@ export interface Cliente {
     GeneroID: number;
     CorreoElectronico: string;
     Telefono: string;
+    FechaRegistro : Date;
 }
 
 export interface ClienteCrear {
@@ -15,4 +16,5 @@ export interface ClienteCrear {
     GeneroID: number;
     CorreoElectronico: string;
     Telefono: string;
+    FechaRegistro : Date;
 }

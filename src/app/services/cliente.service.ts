@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Cliente } from 'src/models/cliente';
+import { Cliente, ClienteCrear } from 'src/models/cliente';
 import { Observable } from 'rxjs';
 
 
@@ -26,7 +26,7 @@ export class ClienteService {
     return this.httpClient.get<Cliente>(this.productoURL + `detailname/${nombre}`);
   }
 
-  public save(cliente: Cliente): Observable<any> {
+  public save(cliente: ClienteCrear): Observable<any> {
     return this.httpClient.post<any>('http://localhost:3000/Clientes', cliente);
   }
 

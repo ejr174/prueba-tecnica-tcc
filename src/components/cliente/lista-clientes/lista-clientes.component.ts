@@ -59,5 +59,4 @@ export class ListaClientesComponent implements OnInit {
         return 'Desconocido';
     }
   }  
-  
 }
