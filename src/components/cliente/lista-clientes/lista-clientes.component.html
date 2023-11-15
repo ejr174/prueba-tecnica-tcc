@@ -1,6 +1,6 @@
 <div style="width: 95%; margin: 0 auto;">
 
-    <table class="table table-dark text-center">
+    <table *ngIf="clientes.length > 0" class="table table-dark text-center">
         <thead>
           <tr>
             <th scope="col">Id</th>        
@@ -28,6 +28,12 @@
             <td><button class="btn btn-outline-danger" (click)="borrar(cliente.ClienteID)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
           </tr>
         </tbody>
-      </table>    
+    </table>    
+
+    <div *ngIf="clientes.length <= 0" style="display: flex;flex-direction: column;align-items: center;">
+      <p style="margin-top: 10px; font-weight: bold; font-size: 18px; text-transform: uppercase;">No hay clientes disponibles</p>      
+      <img src="https://usagif.com/wp-content/uploads/upgifsok/tumbleweed-acegif-45.gif" alt="GIF Tumbleweed" style="width: 40%;">
+
+    </div>
 </div>
 
