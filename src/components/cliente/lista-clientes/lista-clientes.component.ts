@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { Cliente } from 'src/models/cliente';
 import { NgModule } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-clientes',
@@ -31,7 +32,27 @@ export class ListaClientesComponent implements OnInit {
   }
 
   borrar(id: number): void {
-    console.log(`Borrar el ${id}`)
+    Swal.fire({
+      title: "¿Estás seguro de eliminar el Cliente?",
+      text: "No podrás recuperar la información del cliente!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "rgb(137 137 137)",
+      confirmButtonText: "Eliminar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.clienteService.delete(id).subscribe( res => {
+          this.cargarClientes();
+        });
+        Swal.fire({
+          title: "¡Eliminado!",
+          text: "El cliente fue eliminado de la base de datos",
+          icon: "success",
+          confirmButtonColor : "#a5dc86"
+        });
+      }
+    });    
   }
 
   getTipoIdentificacion(tipoIdentificacionID: number): string {

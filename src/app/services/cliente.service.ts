@@ -41,6 +41,7 @@ export class ClienteService {
   }*/
 
   public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.productoURL + `delete/${id}`);
+    console.log(id)
+    return this.httpClient.delete<any>(`http://localhost:3000/Clientes/delete/${id}`);
   }
 }
