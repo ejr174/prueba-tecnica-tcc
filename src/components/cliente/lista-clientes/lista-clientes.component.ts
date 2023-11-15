@@ -58,7 +58,7 @@ export class ListaClientesComponent implements OnInit {
   getTipoIdentificacion(tipoIdentificacionID: number): string {
     switch (tipoIdentificacionID) {
       case 1:
-        return 'Cédula Ciudadanita';
+        return 'Cédula Ciudadania';
       case 2:
         return 'NIT';
       case 3:
