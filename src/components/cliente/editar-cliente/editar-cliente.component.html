@@ -1,1 +1,47 @@
-<p>editar-cliente works!</p>
+<div>
+    <div class="col-md-4 mx-auto bg-dark" style="border: 1px solid rgb(227 227 227 / 58%);box-shadow: 0px 4px 7px 1px rgba(158,155,155,0.75);margin-top: 20px;padding: 17px;border-radius: 8px;color: white;" >
+        <h3 style="text-align: center;">Editar cliente</h3>
+        <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+            <div class="row row-cols-2 ">
+                <div class="form-group col">
+                    <label for="tipoIdentificacion" class="col-form-label fw-bold">Tipo de Identificación:</label>
+                    <select id="tipoIdentificacion" formControlName="TipoIdentificacionID" class="form-control form-select" >                            
+                        <option *ngFor="let tipo of tiposIdentificacion" [value]="tipo.id">{{ tipo.nombre }}</option>
+                    </select>           
+                </div>
+                <div class="form-group col">
+                    <label for="numeroIdentificacion" class="col-form-label fw-bold">Número de Identificación:</label>
+                    <input type="number" id="numeroIdentificacion" formControlName="NumeroIdentificacion" class="form-control">             
+                </div>                    
+            </div>
+            <div class="row row-cols-2">
+                <div class="form-group col">
+                    <label for="nombre" class="col-form-label fw-bold">Nombre:</label>
+                    <input type="text" id="nombre" formControlName="Nombre" class="form-control">
+                </div>
+                <div class="form-group col">
+                    <label for="genero" class="col-form-label fw-bold">Género:</label>
+                    <select id="genero" formControlName="GeneroID" class="form-control form-select">
+                      <option *ngFor="let genero of generos" [value]="genero.id">{{ genero.nombre }}</option>
+                    </select>
+                </div>
+            </div>              
+            <div class="row row-cols-2 ">
+                <div class="form-group col">
+                    <label for="correo" class="col-form-label fw-bold">Correo:</label>
+                    <input type="text" id="correo" formControlName="CorreoElectronico" class="form-control">
+                </div>                    
+                <div class="form-group col ">
+                    <label for="telefono" class="col-form-label fw-bold">Teléfono:</label>
+                    <input type="text" id="telefono" formControlName="Telefono" class="form-control">
+                </div>                  
+            </div>  
+            <div *ngIf="formularioNoValido" style="color: #df0c0c;text-align: center;font-weight: 500;">
+                <p>Formulario no válido. Por favor, verifica los campos.</p>
+            </div>              
+            <div style="display: flex; width: 100%;">
+                <button type="submit" class="btn btn-secondary mt-1 fw-semibold shadow-sm" style="text-transform: uppercase; letter-spacing: 1px; margin: 0 auto; font-weight: bold;" >Guardar</button>
+            </div>                                              
+        </form>              
+    </div>
+</div>

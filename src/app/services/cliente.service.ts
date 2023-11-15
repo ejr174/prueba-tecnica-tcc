@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ClienteService {
 
 
-  productoURL = 'http://localhost:8080/producto/';
+  productoURL = 'http://localhost:3000/Clientes';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -30,9 +30,15 @@ export class ClienteService {
     return this.httpClient.post<any>('http://localhost:3000/Clientes', cliente);
   }
 
-  public update(id: number, producto: Cliente): Observable<any> {
-    return this.httpClient.put<any>(this.productoURL + `update/${id}`, producto);
+  public update(id: number, cliente: Cliente): Observable<any> {
+    const url = `${this.productoURL}/${id}`;
+    return this.httpClient.put<any>(url, cliente);
   }
+  
+  /*
+  public update(id: number, cliente: Cliente): Observable<any> {
+    return this.httpClient.put<any>(this.productoURL, cliente);
+  }*/
 
   public delete(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.productoURL + `delete/${id}`);

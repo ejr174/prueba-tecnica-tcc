@@ -17,15 +17,13 @@ export class ListaClientesComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.cargarProductos();
+    this.cargarClientes();
   }
 
-  cargarProductos(): void {
+  cargarClientes(): void {
     this.clienteService.lista().subscribe(
       (resp : any) => {
-        console.log("Entro", resp.data)
-        this.clientes = resp.data;
-                
+        this.clientes = resp.data;              
       },
       err => {
         console.error('Error la obtener cliente',err)

@@ -15,12 +15,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ListaClientesComponent } from 'src/components/cliente/lista-clientes/lista-clientes.component';
 import { CrearClienteComponent } from 'src/components/cliente/crear-cliente/crear-cliente.component';
+import { EditarClienteComponent } from 'src/components/cliente/editar-cliente/editar-cliente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrearClienteComponent,
     ListaClientesComponent,    
+    EditarClienteComponent
   ],
   imports: [
     BrowserModule,
